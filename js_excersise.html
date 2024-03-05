@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Toggle</title>
+<style>
+    
+    img {
+        width: 1600px;
+        max-width: 800px; 
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
+    }
+    button {
+        display: block; /*button is a block element*/
+        margin: 20px auto; /* center the button and add space above  */
+        width: fit-content; /* asjust the button's width to fit the content */
+    }
+</style>
+</head>
+<body>
+
+<img id="toggleImage" src="https://www.usatoday.com/gcdn/presto/2020/03/17/USAT/c0eff9ec-e0e4-42db-b308-f748933229ee-XXX_ThinkstockPhotos-200460053-001.jpg?crop=1170,658,x292,y120&width=1170&height=658&format=pjpg&auto=webp" alt="Image">
+<button id="toggleButton" onclick="toggleImage()">Show Image #2</button>
+
+<script>
+let imageShown = 1; // Keep track of which image is currently shown
+
+function toggleImage() {
+    const imageElement = document.getElementById('toggleImage');
+    const buttonElement = document.getElementById('toggleButton');
+    
+    if (imageShown === 1) {
+        imageElement.src = "https://hips.hearstapps.com/hmg-prod/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=1200:*";
+        buttonElement.textContent = "Show Image #1";
+        imageShown = 2;
+    } else {
+        imageElement.src = "https://www.usatoday.com/gcdn/presto/2020/03/17/USAT/c0eff9ec-e0e4-42db-b308-f748933229ee-XXX_ThinkstockPhotos-200460053-001.jpg?crop=1170,658,x292,y120&width=1170&height=658&format=pjpg&auto=webp";
+        buttonElement.textContent = "Show Image #2";
+        imageShown = 1;
+    }
+}
+</script>
+
+</body>
+</html>

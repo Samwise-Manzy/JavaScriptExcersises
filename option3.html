@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> reate URL from form controls </title>
+
+<!-- <link rel="stylesheet" href="styles.css"> ** optional way to have CSS file externaly--> 
+</head>
+
+<style>
+#myButton {
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    padding: 10px;
+}
+</style>
+
+<body>
+    <h1>Create URL from form controls</h1>
+
+    <h2>state</h2>
+    <input type="text" id="stateTextInput" placeholder="enter state"><br>
+
+    <h2>page #</h2>
+    <input type="text" id="pageTextInput" placeholder="enter page #"><br>
+
+    <h2># credit cards</h2>
+    <input type="text" id="cardTextInput" placeholder="enter # credit cards"><br><br>
+
+    <input type="button" value="submit" id="myButton">
+
+
+<!-- <script src="path/to/your/script.js"></script> -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        let submitButton = document.getElementById('myButton');
+        submitButton.addEventListener('click', function() {
+            let stateInput = document.getElementById('stateTextInput').value;
+            let pageInput = document.getElementById('pageTextInput').value;
+            let cardInput = document.getElementById('cardTextInput').value;
+
+            const createdUrl = `http://creditcards.web.dark/${stateInput}?page=${pageInput}&perpage=${cardInput}`;
+
+            alert(createdUrl);
+
+        });
+    });
+</script>
+</body>
+</html>

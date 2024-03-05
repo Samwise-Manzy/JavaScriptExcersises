@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Dynamic Table Example </title>
+
+<!-- <link rel="stylesheet" href="styles.css"> ** optional way to have CSS file externaly> -->
+
+</head>
+
+<style>
+    table {
+        border: 1px solid black;
+        border-collapse: collapse; /* Optional: removes the space between the borders */
+    }
+    th, td {
+        border: 1px solid black;
+    }
+</style>
+
+
+<body>
+    <h1>Proceeding Header</h1>
+
+    <table>
+        <thead>
+            <th>Property 1</th>
+            <th>Property 2</th>
+            <th>Property 3</th>
+        </thead>
+        <tbody id="tableData">
+            <!-- Table rows will be inserted here by JavaScript -->
+            
+        </tbody>
+    </table>
+
+    <h1>Following Header</h1>
+
+    <!-- <script src="path/to/your/script.js"></script> -->
+    <script>
+        // Define an array of objects
+        const data = [
+        { prop1: 'Obj 1 prop 1', prop2: 'Obj 1 prop 2', prop3: 'Obj 1 prop 3' },
+        { prop1: 'Obj 2 prop 1', prop2: 'Obj 2 prop 2', prop3: 'Obj 2 prop 3' },
+        { prop1: 'Obj 3 prop 1', prop2: 'Obj 3 prop 2', prop3: 'Obj 3 prop 3' }
+        ];
+
+        let tableBody = document.getElementById('tableData');
+        /* foreach allows you to provide a function for each element  in the array */
+        data.forEach(obj => { 
+            let row = `<tr>
+                <td>${obj.prop1}</td>
+                <td>${obj.prop2}</td>
+                <td>${obj.prop3}</td>
+            </tr>`;
+            tableBody.innerHTML += row;
+        });
+
+
+
+
+    </script>
+
+
+
+</body>
+</html>
